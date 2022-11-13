@@ -1,0 +1,56 @@
+@import "../../../variables.sass"
+
+.search-container
+    position: relative
+    width: 80%
+    margin: 0 auto 20px
+    display: flex
+    align-items: center
+
+    button
+        position: absolute
+        right: 0
+        font-size: 20px
+        color: #fff
+        background: #000
+        border: none
+        outline: none
+        height: 100%
+        width: 100px
+        border-radius: 0 50px 50px 0
+        cursor: pointer
+
+    .search-field
+        width: 100%
+        border: 1px solid #cfcfcf
+        padding: 1rem 2rem
+        font-size: 16px
+        border-radius: 50px
+
+    .suggested-search-list
+        position: absolute
+        top: 100%
+        left: 1rem
+        background: #fff
+        width: calc(100% - (100px + 1rem))
+        box-shadow: 1px 1px 5px rgb(0 0 0 / 30%)
+        border-radius: 0 0 5px 5px
+        margin: 0
+        padding: 0
+
+        li
+            list-style-type: none
+            padding: 12px 20px
+            border-bottom: 1px solid #eee
+            cursor: pointer
+            transition: all .3s ease-in
+            font-family: $BoldFont
+            font-size: 16px
+
+        li:hover
+            background: #eee
+
+        
+        li:last-child
+            border: none
+            

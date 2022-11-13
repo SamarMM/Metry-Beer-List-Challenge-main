@@ -1,0 +1,18 @@
+<div class="search-container">
+    <input 
+        type="text" 
+        class="search-field" 
+        placeholder="Search..." 
+        [(ngModel)]="searchKey"
+        (ngModelChange)="searchKey = $event"
+        (keypress)="handleSubmit($event)"
+        (keyup)="SuggestSearches($event)"
+        />  
+    <button id="search-btn"><fa-icon [icon]="faSearch" (click)="Search()"></fa-icon></button>
+    <ul class="suggested-search-list">
+        <li 
+        *ngFor="let searchItem of searchItems"
+        (click)="SetSearchValue($event)"
+        >{{searchItem}}</li>
+    </ul>
+</div>

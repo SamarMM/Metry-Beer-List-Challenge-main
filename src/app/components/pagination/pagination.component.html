@@ -1,0 +1,7 @@
+<div class="pagination-container">
+    <span class="page-number-container">Page Number: <span class="current-page-number">{{currentPageNumber}}</span></span>
+    <div class="btns-container">
+        <button class="btn" id="previous-btn" (click)="handleClick('Previous')" disabled="{{isPrevDisabled ? 'disabled': ''}}"><fa-icon [icon]="faArrowLeft"></fa-icon> Previous</button>
+        <button class="btn" id="next-btn" (click)="handleClick('Next')" disabled="{{isNextDisabled ? 'disabled' : ''}}">Next <fa-icon [icon]="faArrowRight"></fa-icon></button>    
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<app-search (updateSearch)="updateSearch($event)" [searchKey]="searchKeyValue"></app-search>
+
+<img class="loader-img" src="{{loaderImage}}" [ngStyle]="{'display': loaderDisplay}">
+
+<div class="no-data" [ngStyle]="{'display': noDataDisplay}">
+    <img src="{{noDataImage}}">
+    <p>Sorry No Data Found by <b>{{searchKeyValue}}</b></p>
+</div>
+
+<div class="beer-list" [ngStyle]="{'display': listDisplay}">
+    <app-beer-item *ngFor="let beer of beers" [beerData]="beer" ></app-beer-item>
+    <ng-container *ngIf="serverCallFinished">
+        <app-pagination startPage="startPage" (updatePageNumber)="updatePage($event)" [lastPage]="lastPage" [currentPageNumber]="currentPageNumber"></app-pagination>
+    </ng-container>
+</div>
